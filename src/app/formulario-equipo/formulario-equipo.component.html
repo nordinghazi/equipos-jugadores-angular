@@ -1,0 +1,23 @@
+<h1>Insertar Equipos</h1>
+
+
+<input type="file" (change)="fileChangeEvent($event)" />
+
+<image-cropper
+    [imageChangedEvent]="imageChangedEvent"
+    [maintainAspectRatio]="true"
+    [aspectRatio]="4 / 3"
+    format="png"
+    (imageCropped)="imageCropped($event)"
+></image-cropper>
+
+<img [src]="croppedImage" />
+
+<label for="nombre" class="form-label">Nombre del equipo:</label>
+<input type="text" class="form-control mb-3" id="nombre" placeholder="Nombre del equipo" [(ngModel)]="equipo.nombre">
+<label for="ciudad" class="form-label">Ciudad:</label>
+<input type="text" class="form-control mb-3" id="ciudad" placeholder="Ciudad" [(ngModel)]="equipo.ciudad">
+<label for="fechaCreacion" class="form-label">Fecha creación:</label>
+<input type="date" class="form-control mb-3" id="fechaCreacion" placeholder="Fecha creación"
+    [(ngModel)]="equipo.fechaCreacion">
+<button type="button" class="btn btn-primary mb-4" (click)="postEquipo()">Enviar</button>

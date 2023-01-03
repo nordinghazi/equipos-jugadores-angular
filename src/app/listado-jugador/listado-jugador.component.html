@@ -1,0 +1,16 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Dorsal del jugador</th>
+        <th scope="col">Nombre del jugador</th>
+        <th scope="col">Sueldo del jugador</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let jugador of jugadores">
+        <th >{{jugador.numero}}</th>
+        <td>{{jugador.nombre}}</td>
+        <td>{{jugador.sueldo}}</td>
+      </tr>
+    </tbody>
+  </table>

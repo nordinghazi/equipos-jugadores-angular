@@ -1,0 +1,33 @@
+<h1>Insertar jugador</h1>
+
+
+
+<label for="nombre" class="form-label">Nombre del jugador:</label>
+
+<input type="text" class="form-control mb-3" id="nombre" placeholder="Nombre del jugador" [(ngModel)]="jugador.nombre">
+
+
+
+<label for="numero" class="form-label">Número:</label>
+
+<input type="number" class="form-control mb-3" id="numero" placeholder="Número" [(ngModel)]="jugador.numero">
+
+
+
+<label for="sueldo" class="form-label">Sueldo:</label>
+
+<input type="number" class="form-control mb-3" id="sueldo" placeholder="Sueldo" [(ngModel)]="jugador.sueldo">
+
+
+
+<label for="equipo" class="form-label">Equipo:</label>
+
+<select class="form-select mb-3" id="equipo" [(ngModel)]="jugador.equipo">
+
+    <option *ngFor="let equipo of equipos" [value]="equipo.id">{{equipo.ciudad}}</option>
+
+</select>
+
+
+
+<button type="button" class="btn btn-primary mb-4" (click)="postJugador()">Enviar</button>
